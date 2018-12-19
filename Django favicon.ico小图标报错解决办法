@@ -1,0 +1,17 @@
+创建app/static
+添加图片:favicon.ico
+ 
+ 
+ 
+urls.py文件下：
+    import os
+    from django.views.generic.base import RedirectView
+    urlpatterns = [
+    url(r'^favicon.ico',RedirectView.as_view(url=r'/static/favicon.ico')),
+    ]
+ 
+    from django.conf import settings
+    from django.conf.urls.static import static
+    if settings.DEBUG:
+    media_root = os.path.join(settings.BASE_DIR,'')
+    urlpatterns += static('/media2/',document_root=media_root)
