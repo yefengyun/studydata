@@ -1,17 +1,13 @@
-创建app/static
-添加图片:favicon.ico
- 
- 
- 
-urls.py文件下：
-    import os
+1.在项目根目录创建static文件夹
+2.在static中添加图片:favicon.ico
+3.在项目的settings.py文件中添加：
+  STATICFILES_DIRS=[
+    os.path.join(BASE_DIR,'static')
+  ]
+4.在项目的urls.py文件中添加：
+    
     from django.views.generic.base import RedirectView
+    
     urlpatterns = [
-    url(r'^favicon.ico',RedirectView.as_view(url=r'/static/favicon.ico')),
+      re_path(r'^favicon.ico',RedirectView.as_view(url=r'/static/favicon.ico')),
     ]
- 
-    from django.conf import settings
-    from django.conf.urls.static import static
-    if settings.DEBUG:
-    media_root = os.path.join(settings.BASE_DIR,'')
-    urlpatterns += static('/media2/',document_root=media_root)
