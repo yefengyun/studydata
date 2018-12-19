@@ -1,0 +1,30 @@
+第一步：在项目文件夹中
+	1)npm install jquery --save-dev
+	2)sudo npm install bootstrap --save
+	3)npm install --save popper.js
+
+第二步：在build文件夹下webpack.base.conf.js文件中修改配置
+	1)添加：const webpack = require('webpack');
+	2)在module.exports里面添加plugins
+		plugins: [
+		    new webpack.ProvidePlugin({
+		      $: "jquery",
+		      jQuery: "jquery",
+		      jquery: "jquery",
+		      "window.jQuery": "jquery"
+		    })
+		  ]
+	3)在resolve的alias添加下载到的bootstrap的目录
+		resolve: {
+		    extensions: ['.js', '.vue', '.json'],
+		    alias: {
+		      'vue$': 'vue/dist/vue.esm.js',
+		      '@': resolve('src'),
+		      'bootstrap':resolve('src/common/bootstrap-3.3.7-dist')
+		    }
+		  },
+
+第三步：在main.js中引入如下文件
+	1)import $ from 'jquery'
+	2)import 'bootstrap/css/bootstrap.min.css'
+	3)import 'bootstrap/js/bootstrap.min.js'
