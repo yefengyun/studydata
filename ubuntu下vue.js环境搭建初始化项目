@@ -1,0 +1,19 @@
+1、安装npm
+  sudo apt-get install npm
+
+2、安装cnpm
+  sudo npm install cnpm -g
+  
+3、安装脚手架，搭建模板框架
+  cnpm install -g vue-cli
+  当安装完成后 输入 vue 出现相应信息时成功
+
+4、创建项目
+  vue init webpack vue_test(项目文件夹名)
+  
+5、安装依赖
+  cnpm install
+  
+6、运行项目
+  进入项目目录
+  cnpm run dev
