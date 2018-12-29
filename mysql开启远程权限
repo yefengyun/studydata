@@ -1,0 +1,14 @@
+1.查看MySQL进程是否正常
+  ps -aux|grep mysqld
+  
+2.查看mysql监听IP和端口是否正常
+  netstat -anpt|grep mysqld
+  如果是127.0.0.0：3306,则是只监听本地，需要改成0.0.0.0：3306
+  修改mysql配置文件 /etc/mysql/mysql.conf.d/mysqld.cnf
+  改为 bind-address=0.0.0.0
+  重启mysql service mysql restart
+  
+3.开启mysql远程登录权限
+  进入mysql
+  GRANT ALL PRIVILEGES ON *.* TO '用户名'@'%'IDENTIFIED BY '密码' WITH GRANT OPTION; 
+  FLUSH PRIVILEGES
