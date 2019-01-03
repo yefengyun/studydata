@@ -1,0 +1,23 @@
+这里假设你是通过models的ImageField上传图片，并期望在前台img标签中能显示。能否访问图片关键在于，是否能通过正确的路径访问。
+在models.py中有image如下
+    headimg = models.ImageField(upload_to='user/', default='user/tx00.png') 
+    
+在views中
+        headimg = u.headimg
+        content={'headimg':headimg}
+
+在显示页面中如show.html中使用img标签显示
+    <img class="upload-image" src="/media/{{headimg}}" alt="头像 style="width: 100px;height: 100px;">
+    在这里图像无法显示
+    
+学要在settings里面添加
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    MEDIA_URL = '/media/'
+    
+并在urls里面添加
+from kuairenmai import settings
+from django.conf.urls.static import static
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+    
