@@ -1,0 +1,2 @@
+1.在表单上要加上 enctype="multipart/form-data"
+2.在后台接受用image = request.FILES.get('imgfile')
