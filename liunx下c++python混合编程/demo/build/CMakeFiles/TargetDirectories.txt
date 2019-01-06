@@ -1,0 +1,3 @@
+/home/yfy/hello/build/CMakeFiles/edit_cache.dir
+/home/yfy/hello/build/CMakeFiles/rebuild_cache.dir
+/home/yfy/hello/build/CMakeFiles/ImageProcessAPI.dir
