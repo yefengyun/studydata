@@ -18,8 +18,10 @@ Collection
 		Vector		底层数据结构是数组,查询快增删慢,线程安全,效率低
 		LinkedList	底层数据结构是链表,查询快增删快,线程不安全,效率高
 	  Set(元素无序,唯一)
-		HashSet
-		TreeSet
+		HashSet		无序,唯一(底层数据结构是hash表,线程不安全)
+			LinkedHashSet	有序,唯一(底层数据结构由链表和hash表组成,链表保证有序,hash表保证唯一,线程不安全)
+			
+		TreeSet		是TreeMap结构
 
 
 
