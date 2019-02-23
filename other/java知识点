@@ -30,7 +30,22 @@ Map	以键值对形式存储元素(键唯一,值可以重复)
 
 Collection:是集合的顶层接口.定义了集合的共性
 Collections:是一个工具类.定义类针对集合进行操作的一些常见的方法
-	
+
+Collection<E>;
+		Set<E>;
+			HashSet<E>;
+				LinkedHashSet<E>;
+			TreeSet<E>;
+				
+			List<E>;
+				ArrayList<E>;
+				Vector<E>;
+				LinkedList<E>;
+		
+		Map<K, V>;		
+			HashMap<K, V>;
+			Hashtable<K, V>;
+			TreeMap<K, V>
 
 3.内部类
 	1)成员内部类
